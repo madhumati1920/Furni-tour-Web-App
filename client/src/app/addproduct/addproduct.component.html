@@ -1,0 +1,94 @@
+
+ <div class="main-block">
+     
+      
+      <form action="/">
+
+        <div class="title">
+          <h2>Add Products</h2>
+
+        </div>
+        <a routerLink="/admin"><button style="width: 35%;"> Back to Admin</button></a> <br><br>
+        <div [hidden]="submitted" style="width: 400px">
+
+
+          <form (ngSubmit)="onSubmit()">
+          
+            <div class="form-group">
+              <label for="name">CategoryName</label>
+              <input
+                type="text"
+                class="form-control"
+                id="categoryName"
+                required
+                [(ngModel)]="Catergory.categoryName"
+                name="categoryName" 
+                required
+              />
+            </div>
+
+
+            <div class="form-group">
+              <label for="name">ProductName</label>
+              <input
+                type="text"
+                class="form-control"
+                id="productName"
+                required
+                [(ngModel)]="Product.productName"
+                name="productName" 
+                required
+              />
+            </div>
+        
+            <div class="form-group">
+              <label for="name">productPrice</label>
+              <input
+                type="text"
+                class="form-control"
+                id="productPrice"
+                required
+                [(ngModel)]="Product.productPrice"
+                name="productPrice"
+              />
+            </div>
+        
+            <div class="form-group">
+              <label for="name">productDescription</label>
+              <input
+                type="text"
+                class="form-control"
+                id="productDescription"
+                required
+                [(ngModel)]="Product.productDescription"
+                name="productDescription"
+              />
+            </div>
+        
+            <div class="form-group">
+              <label for="name">productImage</label>
+              <input
+                type="file" 
+                class="form-control"
+                id="productImage"
+                required
+                [(ngModel)]="Product.productImage"
+                name="productImage"
+              />
+              
+            </div>
+        
+                    
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        
+        
+        
+        </div>
+        
+        
+      </form>
+    </div>
+    
+    <div>
+      

@@ -1,0 +1,26 @@
+<p>admin works!</p>
+
+
+
+<app-header></app-header>
+<div class="main-block">
+
+
+    <form action="/">
+
+        <a routerLink="/home"><button style="width: 35%;"> Home </button></a> <br><br>
+        <div [hidden]="submitted" style="width: 400px">
+
+
+            <a routerLink="/addcategory" class="nav-link active" aria-current="page" href="#">
+                <i style="font-size:15px"></i><button>Add category</button> </a>
+            <a routerLink="/addproduct" class="nav-link active" aria-current="page" href="#">
+                <i style="font-size:15px"></i><button>Add Product</button> </a>
+
+
+        </div>
+
+
+    </form>
+</div>
+<app-footer></app-footer>

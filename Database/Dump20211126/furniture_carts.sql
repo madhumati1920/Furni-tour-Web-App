@@ -1,0 +1,59 @@
+-- MySQL dump 10.13  Distrib 8.0.23, for Win64 (x86_64)
+--
+-- Host: localhost    Database: furniture
+-- ------------------------------------------------------
+-- Server version	8.0.23
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `carts`
+--
+
+DROP TABLE IF EXISTS `carts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `carts` (
+  `orderid` int DEFAULT NULL,
+  `custid` int DEFAULT NULL,
+  `productid` int DEFAULT NULL,
+  `qty` int DEFAULT NULL,
+  `price` int DEFAULT NULL,
+  KEY `productid_idx` (`productid`),
+  KEY `custid_idx` (`custid`),
+  KEY `orderid_idx` (`orderid`),
+  CONSTRAINT `custid` FOREIGN KEY (`custid`) REFERENCES `customer` (`customerid`),
+  CONSTRAINT `orderid` FOREIGN KEY (`orderid`) REFERENCES `order` (`orderid`),
+  CONSTRAINT `productid` FOREIGN KEY (`productid`) REFERENCES `product` (`productid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `carts`
+--
+
+LOCK TABLES `carts` WRITE;
+/*!40000 ALTER TABLE `carts` DISABLE KEYS */;
+INSERT INTO `carts` VALUES (3,41,12,1,1548),(3,41,14,1,3652),(4,41,13,1,1254),(4,41,4,1,6482),(4,41,6,1,5185),(5,41,11,1,1036),(5,41,5,1,2541),(6,41,7,1,2584),(7,16,12,1,1548),(NULL,NULL,NULL,NULL,NULL),(11,16,12,1,1036),(1,16,12,1,6512),(11,16,13,1,1036),(1,16,14,1,6512),(11,16,14,1,1036),(1,16,15,1,6512),(4,16,15,1,6482),(7,16,15,1,2584),(16,58,2,1,2541),(16,58,5,1,2541),(16,58,8,1,1563),(17,58,7,1,2584),(17,58,14,1,3652),(18,58,4,1,6482),(18,58,11,1,1036),(18,58,1,1,6512),(18,58,3,1,2654),(18,58,2,1,2541),(20,16,7,1,2584),(20,16,8,1,1563),(24,16,4,1,6482),(24,16,5,1,2541),(25,16,7,1,2584),(25,16,8,1,1563),(26,16,4,1,6482),(26,16,5,1,2541),(30,16,5,1,2541),(30,16,6,1,5185),(31,16,5,1,2541),(31,16,6,1,5185),(32,16,4,1,6482),(32,16,5,1,2541),(34,16,4,1,6482),(35,14,2,1,2541),(37,64,12,1,1548),(37,64,14,1,3652);
+/*!40000 ALTER TABLE `carts` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-11-26 17:51:25
